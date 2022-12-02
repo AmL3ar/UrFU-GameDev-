@@ -1,5 +1,5 @@
 # АНАЛИЗ ДАННЫХ И ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ [in GameDev]
-Отчет по лабораторной работе #1 выполнил(а):
+Отчет по лабораторной работе #4 выполнил(а):
 - Зверев Артем Сергевич
 - РИ210932
 Отметка о выполнении заданий (заполняется студентом):
@@ -38,44 +38,57 @@
 Ознакомиться с основными операторами зыка Python на примере реализации линейной регрессии.
 
 ## Задание 1
-### Выведен "Hello world!" на python и Unity 
-![python(Hello world!).png](https://github.com/AmL3ar/UrFU-GameDev-/blob/main/python(Hello%20world!).png)
-![unity(Hello world!).png](https://github.com/AmL3ar/UrFU-GameDev-/blob/main/unity(Hello%20world!).png)
+1)OR 8 эпох
+Эпохи:
+![image](https://user-images.githubusercontent.com/101055411/205239446-b0f77f60-c517-437a-9090-185111fee794.png)
+![image](https://user-images.githubusercontent.com/101055411/205239493-b125f403-1721-472f-a6af-5d29401a8c79.png)
+![image](https://user-images.githubusercontent.com/101055411/205239524-af0e4a51-1df0-416f-9798-0ec9402343a5.png)
+![image](https://user-images.githubusercontent.com/101055411/205239550-293dfbd6-1d30-49ec-ac40-178af958cb0f.png)
+Тесты:
+![image](https://user-images.githubusercontent.com/101055411/205239563-c6c9cea0-5059-4ec6-bbea-ec0459ea5d7b.png)
+Как видно, для OR вполне хватит 4 эпох, для того, чтобы обучиться. За первые 4-е эпохи Perceptron обучался на разных числовых значениях,
+но когда обучился на 4-й эпохе, числа  пошли одинаковыми.
+2)AND 8 эпох
+Эпохи:
+![image](https://user-images.githubusercontent.com/101055411/205240024-714b4f9b-81a6-4682-82c6-de8d30aacfc0.png)
+![image](https://user-images.githubusercontent.com/101055411/205240074-9c538c5e-980d-49f8-bf43-1cd8dd14b778.png)
+![image](https://user-images.githubusercontent.com/101055411/205240094-0964a466-81c5-42f1-ac6f-3f0c12161497.png)
+![image](https://user-images.githubusercontent.com/101055411/205240121-d2a689a2-9bf9-4ec2-94f3-1624f76236fb.png)
+Тесты:
+![image](https://user-images.githubusercontent.com/101055411/205240151-953b299d-50cb-4388-a500-e717922b5cd7.png)
+Для AND понадобилось больше эпох,чем для OR, ему понадобилось 7 эпох.
+3)NAND 8 эпох
+Эпохи:
+![image](https://user-images.githubusercontent.com/101055411/205241284-0a053b93-e4d9-4c4e-ae46-17e1c2dee423.png)
+![image](https://user-images.githubusercontent.com/101055411/205241326-9da7fa2d-800f-4116-ae70-87412aa5237c.png)
+![image](https://user-images.githubusercontent.com/101055411/205241363-1d99b08d-cb6e-4de7-ab06-3a657b16f0ea.png)
+![image](https://user-images.githubusercontent.com/101055411/205241407-e7187930-2a51-4220-b81e-400e1daf87fe.png)
+Тесты:
+![image](https://user-images.githubusercontent.com/101055411/205241462-945f8fc6-5ddc-4670-bad1-8ab46508442c.png)
+Для NAND понадобилось 5 эпох.
+4)XOR 8 эпох
+Эпохи:
+![image](https://user-images.githubusercontent.com/101055411/205242747-f91b5191-2103-4b8a-8a98-ce4560fcc5d7.png)
+![image](https://user-images.githubusercontent.com/101055411/205242775-22f6b57c-3663-43fe-bfcd-92b3d4a8028d.png)
+![image](https://user-images.githubusercontent.com/101055411/205242807-bf51bd95-9aa4-4f0f-9705-5bf265bd3892.png)
+![image](https://user-images.githubusercontent.com/101055411/205242836-7c85b493-3181-456b-b56d-9093725f29f3.png)
+Тесты:
+![image](https://user-images.githubusercontent.com/101055411/205242886-33d9ef9f-6328-49e4-b9cc-fd40331c34ce.png)
+Как видно, для XOR не хватает 8 эпох для обучения, поэтому нужно поднимать эпохи.
+4.1)Для XOR 16 эпох не хватает
+4.2)Для XOR 32 эпох не хватает
+
 
 ## Задание 2
-### Пошагово выполнить каждый пункт раздела "ход работы" с описанием и примерами реализации задач
-Шаг первый: Мы использовали 2 библиотеки: numpy и matplotlib.pyplot
-Дальше, написав данные для списков x и y,  мы создали массивы с помощью библиотеки numpy и передали в них значения списков.
-После этого построили график, благодаря библиотеке matplotlib.pyplot - https://github.com/AmL3ar/UrFU-GameDev-/blob/main/шаг%201.png
-Шаг второй: мы создали 4 функции: model; loss_function; optimize; iterare, каждая из которых выполняет свою обязанность.
-model - определяет модель линейной регрессии a * x + b
-loss_function - определяет среднеквадратичную ошибку
-optimize - оптимизация, которая идёт по методу градиентного спуска для нахождения частных производных a и b
-iterate - производит итерацию 
-https://github.com/AmL3ar/UrFU-GameDev-/blob/main/шаг2.png
-шаг третий: Проверяем разные итерации:
-первая итерация - https://github.com/AmL3ar/UrFU-GameDev-/blob/main/1итерация.png
-вторая итерация - https://github.com/AmL3ar/UrFU-GameDev-/blob/main/2итерация.png
-третья итерация - https://github.com/AmL3ar/UrFU-GameDev-/blob/main/3итерация.png
-четвертая итерация - https://github.com/AmL3ar/UrFU-GameDev-/blob/main/4итерация.png
-пятая итерация - https://github.com/AmL3ar/UrFU-GameDev-/blob/main/5итерация.png
-десятитысячная итерация - https://github.com/AmL3ar/UrFU-GameDev-
+
 
 
 ## Задание 3
-### Должна ли величина loss стремиться к нулю при изменении исходных данных? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ.
-### Какова роль параметра Lr? Ответьте на вопрос, приведите пример выполнения кода, который подтверждает ваш ответ. В качестве эксперимента можете изменить значение параметра.
-Lr - из графиков видно, что при уменьшении Lr будет изменение направления прямой, чем меньше, тем больше угол наклона у неё будет
-https://github.com/AmL3ar/UrFU-GameDev-/blob/main/lr1.png
-https://github.com/AmL3ar/UrFU-GameDev-/blob/main/lr2.png
-loss стремится к нулю. При каждом увеличении итераций, она уменьшается, при 10000 итераций loss = 190... , при 1000000 loss = 182..., при 2000000 loss = 178...
-https://github.com/AmL3ar/UrFU-GameDev-/blob/main/10000.png
-https://github.com/AmL3ar/UrFU-GameDev-/blob/main/1000000.png
-https://github.com/AmL3ar/UrFU-GameDev-/blob/main/2000000.png
+
 
 
 ## Выводы
-Я узнал, как работают библиотеки numpy и matplotlib.pyplot. Рассмотрев код, улучшил свои навыки анализа программы. Научился создавать свой репозиторий GitHub. Впервые на Unity написал "Hello World!"
+
 
 
 | Plugin | README |
